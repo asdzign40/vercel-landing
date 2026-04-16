@@ -28,23 +28,40 @@ import {
   PlayCircle
 } from "lucide-react";
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
-const logo = "/logo.png";
-const logoWebp = "/logo.webp";
-const imgPainel = "/painel.png";
-const imgPainelWebp = "/painel.webp";
-const imgPainel800 = "/painel-800.webp";
-const imgPainel1200 = "/painel-1200.webp";
-const imgMetas = "/metas.png";
-const imgMetasWebp = "/metas.webp";
-const imgMetas800 = "/metas-800.webp";
-const imgMetas1200 = "/metas-1200.webp";
-const imgProjecoes = "/projecoes.png";
-const imgProjecoesWebp = "/projecoes.webp";
-const imgProjecoes800 = "/projecoes-800.webp";
-const imgProjecoes1200 = "/projecoes-1200.webp";
-const imgTelaInicial = "/tela-inicial.webp";
-const imgTutorial = "/tutorial.webp";
-const imgCriarConta = "/criar-conta.webp";
+// @ts-ignore
+import logo from "./assets/logo.png";
+// @ts-ignore
+import logoWebp from "./assets/logo.webp";
+// @ts-ignore
+import imgPainel from "./assets/painel.png";
+// @ts-ignore
+import imgPainelWebp from "./assets/painel.webp";
+// @ts-ignore
+import imgPainel800 from "./assets/painel-800.webp";
+// @ts-ignore
+import imgPainel1200 from "./assets/painel-1200.webp";
+// @ts-ignore
+import imgMetas from "./assets/metas.png";
+// @ts-ignore
+import imgMetasWebp from "./assets/metas.webp";
+// @ts-ignore
+import imgMetas800 from "./assets/metas-800.webp";
+// @ts-ignore
+import imgMetas1200 from "./assets/metas-1200.webp";
+// @ts-ignore
+import imgProjecoes from "./assets/projecoes.png";
+// @ts-ignore
+import imgProjecoesWebp from "./assets/projecoes.webp";
+// @ts-ignore
+import imgProjecoes800 from "./assets/projecoes-800.webp";
+// @ts-ignore
+import imgProjecoes1200 from "./assets/projecoes-1200.webp";
+// @ts-ignore
+import imgTelaInicial from "./assets/tela-inicial.webp";
+// @ts-ignore
+import imgTutorial from "./assets/tutorial.webp";
+// @ts-ignore
+import imgCriarConta from "./assets/criar-conta.webp";
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
@@ -844,17 +861,23 @@ export default function App() {
                 title="Painel Dashboard"
                 description="Você terá o resumo de suas operações com diversas dicas e análises detalhadas para tomar as melhores decisões para o seu negócio."
                 image={imgPainel}
+                webp={imgPainelWebp}
+                srcset={`${imgPainel800} 800w, ${imgPainel1200} 1200w`}
               />
               <DetailedFeature 
                 reverse
                 title="Metas Financeiras"
                 description="Crie metas personalizadas para investimentos e reduções de gastos. Acompanhe o progresso em tempo real diretamente no seu painel principal."
                 image={imgMetas}
+                webp={imgMetasWebp}
+                srcset={`${imgMetas800} 800w, ${imgMetas1200} 1200w`}
               />
               <DetailedFeature 
                 title="Projeções Financeiras"
                 description="Com base em seus dados históricos, acompanhe a projeção do seu saldo futuro e avalie a melhor maneira de gerir seus resultados a longo prazo."
                 image={imgProjecoes}
+                webp={imgProjecoesWebp}
+                srcset={`${imgProjecoes800} 800w, ${imgProjecoes1200} 1200w`}
               />
             </div>
           </div>
