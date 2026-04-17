@@ -29,22 +29,12 @@ import {
 } from "lucide-react";
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
 const logo = "/logo.png";
-const logoWebp = "/logo.webp";
 const imgPainel = "/painel.png";
-const imgPainelWebp = "/painel.webp";
-const imgPainel800 = "/painel-800.webp";
-const imgPainel1200 = "/painel-1200.webp";
 const imgMetas = "/metas.png";
-const imgMetasWebp = "/metas.webp";
-const imgMetas800 = "/metas-800.webp";
-const imgMetas1200 = "/metas-1200.webp";
 const imgProjecoes = "/projecoes.png";
-const imgProjecoesWebp = "/projecoes.webp";
-const imgProjecoes800 = "/projecoes-800.webp";
-const imgProjecoes1200 = "/projecoes-1200.webp";
-const imgTelaInicial = "/tela-inicial.webp";
-const imgTutorial = "/tutorial.webp";
-const imgCriarConta = "/criar-conta.webp";
+const imgTelaInicial = "/tela-inicial.png";
+const imgTutorial = "/tutorial.png";
+const imgCriarConta = "/criar-conta.png";
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
@@ -155,16 +145,12 @@ const NavLink = memo(({ href, children }: { href: string, children: ReactNode })
 
 const ResponsiveImage = memo(({ 
   src, 
-  webp, 
-  srcset, 
   alt, 
   className, 
   loading = "lazy",
   priority = false
 }: { 
   src: string, 
-  webp?: string, 
-  srcset?: string, 
   alt: string, 
   className?: string,
   loading?: "lazy" | "eager",
@@ -184,7 +170,7 @@ const ResponsiveImage = memo(({
     }, 2000);
     
     return () => clearTimeout(timer);
-  }, [src, webp, srcset]);
+  }, [src]);
 
   return (
     <div className={`relative overflow-hidden bg-brand-surface/30 ${className}`}>
@@ -193,28 +179,21 @@ const ResponsiveImage = memo(({
            <div className="w-8 h-8 border-2 border-brand-accent/20 border-t-brand-accent rounded-full animate-spin" />
         </div>
       )}
-      <picture className="w-full h-full">
-        {srcset ? (
-          <source srcSet={srcset} type="image/webp" />
-        ) : webp ? (
-          <source srcSet={webp} type="image/webp" />
-        ) : null}
-        <motion.img 
-          ref={imgRef}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isLoaded ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
-          src={src} 
-          alt={alt} 
-          loading={loading}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setIsLoaded(true)}
-          // @ts-ignore
-          fetchPriority={priority ? "high" : "auto"}
-          className={`${className} w-full h-auto block`}
-          referrerPolicy="no-referrer"
-        />
-      </picture>
+      <motion.img 
+        ref={imgRef}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoaded ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+        src={src} 
+        alt={alt} 
+        loading={loading}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setIsLoaded(true)}
+        // @ts-ignore
+        fetchPriority={priority ? "high" : "auto"}
+        className={`${className} w-full h-auto block`}
+        referrerPolicy="no-referrer"
+      />
     </div>
   );
 });
@@ -223,15 +202,11 @@ const DetailedFeature = memo(({
   title, 
   description, 
   image, 
-  webp,
-  srcset,
   reverse = false 
 }: { 
   title: string, 
   description: string, 
   image: string, 
-  webp?: string,
-  srcset?: string,
   reverse?: boolean 
 }) => {
   const handleShare = async () => {
@@ -279,8 +254,6 @@ const DetailedFeature = memo(({
           <div className="absolute inset-0 bg-gradient-to-tr from-brand-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <ResponsiveImage 
             src={image} 
-            webp={webp}
-            srcset={srcset}
             alt={title} 
             loading="lazy"
             className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
@@ -844,23 +817,17 @@ export default function App() {
                 title="Painel Dashboard"
                 description="Você terá o resumo de suas operações com diversas dicas e análises detalhadas para tomar as melhores decisões para o seu negócio."
                 image={imgPainel}
-                webp={imgPainelWebp}
-                srcset={`${imgPainel800} 800w, ${imgPainel1200} 1200w`}
               />
               <DetailedFeature 
                 reverse
                 title="Metas Financeiras"
                 description="Crie metas personalizadas para investimentos e reduções de gastos. Acompanhe o progresso em tempo real diretamente no seu painel principal."
                 image={imgMetas}
-                webp={imgMetasWebp}
-                srcset={`${imgMetas800} 800w, ${imgMetas1200} 1200w`}
               />
               <DetailedFeature 
                 title="Projeções Financeiras"
                 description="Com base em seus dados históricos, acompanhe a projeção do seu saldo futuro e avalie a melhor maneira de gerir seus resultados a longo prazo."
                 image={imgProjecoes}
-                webp={imgProjecoesWebp}
-                srcset={`${imgProjecoes800} 800w, ${imgProjecoes1200} 1200w`}
               />
             </div>
           </div>
@@ -901,7 +868,6 @@ export default function App() {
           <div className="relative aspect-square rounded-2xl overflow-hidden border border-brand-border">
             <ResponsiveImage 
               src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1974" 
-              webp="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1974&fm=webp"
               alt="Equipe Controle Fácil trabalhando em gestão financeira inteligente" 
               loading="lazy"
               className="w-full h-full object-cover opacity-60"
