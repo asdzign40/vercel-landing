@@ -46,7 +46,7 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
     e.preventDefault();
     const subject = encodeURIComponent(`Contato de ${name} - Controle Fácil`);
     const body = encodeURIComponent(message);
-    window.location.href = `mailto:cf.gestaofinanceira@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:comercial@appcontrolefacil.com?subject=${subject}&body=${body}`;
     onClose();
   };
 
@@ -74,7 +74,7 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
             <Mail className="w-6 h-6 text-brand-accent" />
           </div>
           <h2 className="text-3xl font-serif font-bold mb-2">Falar com Consultor</h2>
-          <p className="text-brand-text-muted">Envie sua mensagem e entraremos em contato o mais breve possível.</p>
+          <p className="text-brand-text-muted">Envie sua mensagem ou contate-nos diretamente em <span className="text-brand-accent font-medium">comercial@appcontrolefacil.com</span></p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -615,7 +615,7 @@ export default function App() {
             <NavLink href="#features">Soluções</NavLink>
             <NavLink href="#how-it-works">Como Funciona</NavLink>
             <NavLink href="#about">Segurança</NavLink>
-            <NavLink href="#pricing">Preços</NavLink>
+            <NavLink href="#pricing">Planos</NavLink>
             <NavLink href="#faq">FAQ</NavLink>
             <button 
               onClick={toggleTheme}
@@ -649,7 +649,7 @@ export default function App() {
             <a href="#features" className="text-lg uppercase tracking-widest font-bold" onClick={() => setMobileMenuOpen(false)}>Soluções</a>
             <a href="#how-it-works" className="text-lg uppercase tracking-widest font-bold" onClick={() => setMobileMenuOpen(false)}>Como Funciona</a>
             <a href="#about" className="text-lg uppercase tracking-widest font-bold" onClick={() => setMobileMenuOpen(false)}>Segurança</a>
-            <a href="#pricing" className="text-lg uppercase tracking-widest font-bold" onClick={() => setMobileMenuOpen(false)}>Preços</a>
+            <a href="#pricing" className="text-lg uppercase tracking-widest font-bold" onClick={() => setMobileMenuOpen(false)}>Planos</a>
             <a href="#faq" className="text-lg uppercase tracking-widest font-bold" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
             <button 
               onClick={() => {
@@ -877,7 +877,7 @@ export default function App() {
         {/* Pricing Section */}
         <section id="pricing" className="py-32 max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-20">
-            <div className="badge">Planos e Preços</div>
+            <div className="badge">Nossos Planos</div>
             <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6">Escolha o plano ideal <br />para o seu negócio.</h2>
             <p className="text-brand-text-muted max-w-2xl mx-auto">Transparência total, sem taxas escondidas ou contratos complicados.</p>
           </div>
