@@ -192,7 +192,6 @@ const ResponsiveImage = memo(({
         // @ts-ignore
         fetchPriority={priority ? "high" : "auto"}
         className={`${className} w-full h-auto block`}
-        referrerPolicy="no-referrer"
       />
     </div>
   );
@@ -421,7 +420,6 @@ const HowItWorks = memo(() => (
                 src={step.image} 
                 alt={step.title} 
                 className="w-full h-auto object-cover" 
-                referrerPolicy="no-referrer"
               />
             </motion.div>
           )}
