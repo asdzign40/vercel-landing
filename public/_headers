@@ -1,0 +1,23 @@
+/*.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/logo.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/painel.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/metas.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/projecoes.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/tela-inicial.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/tutorial.png
+  Cache-Control: public, max-age=0, must-revalidate
+
+/criar-conta.png
+  Cache-Control: public, max-age=0, must-revalidate

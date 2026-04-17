@@ -28,13 +28,14 @@ import {
   PlayCircle
 } from "lucide-react";
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
-const logo = "/logo.png";
-const imgPainel = "/painel.png";
-const imgMetas = "/metas.png";
-const imgProjecoes = "/projecoes.png";
-const imgTelaInicial = "/tela-inicial.png";
-const imgTutorial = "/tutorial.png";
-const imgCriarConta = "/criar-conta.png";
+const ASSET_VERSION = "v2";
+const logo = `/logo.png?${ASSET_VERSION}`;
+const imgPainel = `/painel.png?${ASSET_VERSION}`;
+const imgMetas = `/metas.png?${ASSET_VERSION}`;
+const imgProjecoes = `/projecoes.png?${ASSET_VERSION}`;
+const imgTelaInicial = `/tela-inicial.png?${ASSET_VERSION}`;
+const imgTutorial = `/tutorial.png?${ASSET_VERSION}`;
+const imgCriarConta = `/criar-conta.png?${ASSET_VERSION}`;
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
