@@ -30,13 +30,13 @@ import {
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
 import { supabase } from "./lib/supabase";
 
-const logo = "/logo.png";
-const imgPainel = "/painel.png";
-const imgMetas = "/metas.png";
+const logo = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/logo.png";
+const imgPainel = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/painel.png";
+const imgMetas = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/metas.png";
 const imgProjecoes = "/projecoes.png";
-const imgTelaInicial = "/tela-inicial.png";
-const imgTutorial = "/tutorial.png";
-const imgCriarConta = "/criar-conta.png";
+const imgTelaInicial = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/tela%20inicial.png";
+const imgTutorial = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/tutorial.png";
+const imgCriarConta = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/criar%20conta.png";
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
