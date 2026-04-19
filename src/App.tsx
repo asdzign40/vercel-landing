@@ -28,15 +28,13 @@ import {
   PlayCircle
 } from "lucide-react";
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
-import { supabase } from "./lib/supabase";
-
-const logo = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/logo.png";
-const imgPainel = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/painel.png";
-const imgMetas = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/metas.png";
+const logo = "/logo.png";
+const imgPainel = "/painel.png";
+const imgMetas = "/metas.png";
 const imgProjecoes = "/projecoes.png";
-const imgTelaInicial = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/tela%20inicial.png";
-const imgTutorial = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/tutorial.png";
-const imgCriarConta = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/criar%20conta.png";
+const imgTelaInicial = "/tela-inicial.png";
+const imgTutorial = "/tutorial.png";
+const imgCriarConta = "/criar-conta.png";
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
@@ -566,21 +564,6 @@ export default function App() {
   );
 
   useEffect(() => {
-    // Test Supabase connection
-    const testSupabase = async () => {
-      try {
-        const { data, error } = await supabase.from('_test_connection').select('*').limit(1);
-        if (error && error.code !== 'PGRST116' && error.code !== '42P01') {
-          console.warn('Supabase Connection Status:', error.message);
-        } else {
-          console.log('Supabase Connected Successfully');
-        }
-      } catch (err) {
-        console.error('Supabase Setup Error:', err);
-      }
-    };
-    testSupabase();
-
     // Apply theme to document
     document.documentElement.classList.toggle("light", theme === "light");
     
