@@ -28,6 +28,8 @@ import {
   PlayCircle
 } from "lucide-react";
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
+import { supabase } from "./lib/supabase";
+
 const logo = "/logo.png";
 const imgPainel = "/painel.png";
 const imgMetas = "/metas.png";
@@ -564,6 +566,21 @@ export default function App() {
   );
 
   useEffect(() => {
+    // Test Supabase connection
+    const testSupabase = async () => {
+      try {
+        const { data, error } = await supabase.from('_test_connection').select('*').limit(1);
+        if (error && error.code !== 'PGRST116' && error.code !== '42P01') {
+          console.warn('Supabase Connection Status:', error.message);
+        } else {
+          console.log('Supabase Connected Successfully');
+        }
+      } catch (err) {
+        console.error('Supabase Setup Error:', err);
+      }
+    };
+    testSupabase();
+
     // Apply theme to document
     document.documentElement.classList.toggle("light", theme === "light");
     
