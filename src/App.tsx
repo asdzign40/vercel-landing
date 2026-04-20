@@ -33,7 +33,7 @@ import { supabase } from "./lib/supabase";
 const logo = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/logo.png";
 const imgPainel = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/painel.png";
 const imgMetas = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/metas.png";
-const imgProjecoes = "/projecoes.png";
+const imgProjecoes = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/projecoes.png";
 const imgTelaInicial = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/tela%20inicial.png";
 const imgTutorial = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/tutorial.png";
 const imgCriarConta = "https://clkqilqqpqybnrpieqyo.supabase.co/storage/v1/object/public/assets/criar%20conta.png";
