@@ -189,6 +189,7 @@ const ResponsiveImage = memo(({
         src={src} 
         alt={alt} 
         loading={loading}
+        referrerPolicy="no-referrer"
         onLoad={() => setIsLoaded(true)}
         onError={() => setIsLoaded(true)}
         // @ts-ignore
@@ -421,6 +422,7 @@ const HowItWorks = memo(() => (
               <img 
                 src={step.image} 
                 alt={step.title} 
+                referrerPolicy="no-referrer"
                 className="w-full h-auto object-cover" 
               />
             </motion.div>
