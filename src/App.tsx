@@ -28,13 +28,15 @@ import {
   PlayCircle
 } from "lucide-react";
 import { useState, useEffect, ReactNode, FormEvent, memo, useRef } from "react";
-const logo = "/logo.png";
-const imgPainel = "/painel.png";
-const imgMetas = "/metas.png";
+import { assetUrl } from "./lib/supabase";
+
+const logo = assetUrl("logo.png");
+const imgPainel = assetUrl("painel.png");
+const imgMetas = assetUrl("metas.png");
 const imgProjecoes = "/projecoes.png";
-const imgTelaInicial = "/tela-inicial.png";
-const imgTutorial = "/tutorial.png";
-const imgCriarConta = "/criar-conta.png";
+const imgTelaInicial = assetUrl("tela inicial.png");
+const imgTutorial = assetUrl("tutorial.png");
+const imgCriarConta = assetUrl("criar conta.png");
 
 const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
   const [name, setName] = useState("");
